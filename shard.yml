@@ -1,0 +1,9 @@
+name: spectator-context_helper
+version: 0.1.0
+
+authors:
+  - your-name-here <your-email-here>
+
+crystal: 1.4.1
+
+license: MIT

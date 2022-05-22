@@ -2,8 +2,13 @@ name: spectator-context_helper
 version: 0.1.0
 
 authors:
-  - your-name-here <your-email-here>
+  - Masaaki Aoyagi <masaaki.aoyagi@gmail.com>
 
 crystal: 1.4.1
 
 license: MIT
+
+dependencies:
+  spectator:
+    gitlab: arctic-fox/spectator
+    version: ~> 0.10.5

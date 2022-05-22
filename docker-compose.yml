@@ -1,0 +1,38 @@
+x-base:
+  base: &base
+    build: &build
+      context: .
+      args: &build-args
+        UID: 1000
+        GID: 1000
+    volumes:
+      - .:/workspace
+      - /workspace/lib
+
+services:
+  "1.4":
+    <<: *base
+    image: spectator-context_helper.cr:1.4
+    build:
+      <<: *build
+      args:
+        <<: *build-args
+        CRYSTAL_VERSION: 1.4
+
+  "1.3":
+    <<: *base
+    image: spectator-context_helper.cr:1.3
+    build:
+      <<: *build
+      args:
+        <<: *build-args
+        CRYSTAL_VERSION: 1.3
+
+  "1.2":
+    <<: *base
+    image: spectator-context_helper.cr:1.2
+    build:
+      <<: *build
+      args:
+        <<: *build-args
+        CRYSTAL_VERSION: 1.2.2

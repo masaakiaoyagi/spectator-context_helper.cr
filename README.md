@@ -1,21 +1,37 @@
-# spectator-context_helper
+# Spectator::ContextHelper
 
 [![test](https://github.com/masaakiaoyagi/spectator-context_helper.cr/actions/workflows/test.yml/badge.svg)](https://github.com/masaakiaoyagi/spectator-context_helper.cr/actions/workflows/test.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-TODO: Write a description here
+This helper library is for writing tests concisely.
+
+For example,
+```crystal
+example_with "value is zero", value: 0 { expect(value).to eq 0 }
+```
+Above is the same as below.
+```crystal
+context "value is zero" do
+  let(:value) { 0 }
+  it { expect(value).to eq 0 }
+end
+```
+
+That's basically all there is to it, but I think it will be more potent when used with a custom matcher.
+
+Also, [the Ruby version](https://github.com/masaakiaoyagi/rspec-context_helper.rb) is available.
 
 ## Installation
 
 1. Add the dependency to your `shard.yml`:
 
-   ```yaml
-   dependencies:
-     spectator-context_helper:
-       github: your-github-user/spectator-context_helper
-   ```
+    ```yaml
+    development_dependencies:
+      spectator-context_helper:
+        github: masaakiaoyagi/spectator-context_helper.cr
+    ```
 
-2. Run `shards install`
+1. Run `shards install`
 
 ## Usage
 
@@ -23,20 +39,14 @@ TODO: Write a description here
 require "spectator-context_helper"
 ```
 
-TODO: Write usage instructions here
+See [spec](https://github.com/masaakiaoyagi/spectator-context_helper.cr/blob/main/spec/spectator/context_helper_spec.cr) how to write a test.
 
 ## Development
 
-TODO: Write development instructions here
+### Run tests
+```sh
+$ docker compose run --rm 1.4 crystal spec
+```
 
-## Contributing
-
-1. Fork it (<https://github.com/your-github-user/spectator-context_helper/fork>)
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
-
-## Contributors
-
-- [your-name-here](https://github.com/your-github-user) - creator and maintainer
+## See also
+* [Spectator](https://gitlab.com/arctic-fox/spectator)

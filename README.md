@@ -5,7 +5,7 @@
 
 This helper library is for writing tests concisely.
 
-For example,
+For example, you can write as follows.
 ```crystal
 example_with "value is zero", value: 0 { expect(value).to eq 0 }
 ```
@@ -18,8 +18,6 @@ end
 ```
 
 That's basically all there is to it, but I think it will be more potent when used with a custom matcher.
-
-Also, [the Ruby version](https://github.com/masaakiaoyagi/rspec-context_helper.rb) is available.
 
 ## Installation
 
@@ -50,3 +48,4 @@ $ docker compose run --rm 1.4 crystal spec
 
 ## See also
 * [Spectator](https://gitlab.com/arctic-fox/spectator)
+* [Ruby version](https://github.com/masaakiaoyagi/rspec-context_helper.rb)

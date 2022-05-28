@@ -3,6 +3,12 @@ require "spectator"
 require "./context_helper/version"
 
 module Spectator::ContextHelper
+  macro example_with(__description__ = nil, **__values__, &block)
+    context_with({{ __description__ }}, {{ **__values__ }}) do
+      it {{ block }}
+    end
+  end
+
   macro context_with(__description__ = nil, **__values__, &block)
     {% __description__ ||= __values__.to_a.map { |(k, v)| "#{k} is #{v}" }.join(" and ") %}
 
@@ -17,12 +23,6 @@ module Spectator::ContextHelper
         end
       {% end %}
       {{ block.body }}
-    end
-  end
-
-  macro example_with(__description__ = nil, **__values__, &block)
-    context_with({{ __description__ }}, {{ **__values__ }}) do
-      it {{ block }}
     end
   end
 end

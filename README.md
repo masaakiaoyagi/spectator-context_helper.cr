@@ -17,7 +17,7 @@ context "value is zero" do
 end
 ```
 
-That's basically all there is to it, but I think it will be more potent when used with a custom matcher.
+That's basically all there is to it, but I think it will be more potent when used with a [custom matcher](https://gitlab.com/arctic-fox/spectator/-/wikis/Custom-Matchers).
 
 ## Installation
 

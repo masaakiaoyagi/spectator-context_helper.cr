@@ -5,7 +5,7 @@
 
 This helper library is for writing tests concisely.
 
-For example, you can write as follows.
+You can write a test as follows.
 ```crystal
 example_with "value is zero", value: 0 { expect(value).to eq 0 }
 ```

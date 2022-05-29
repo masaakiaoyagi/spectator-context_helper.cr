@@ -1,5 +1,6 @@
 # Spectator::ContextHelper
 
+[![stability-wip](https://img.shields.io/badge/stability-wip-lightgrey.svg)](https://github.com/mkenney/software-guides/blob/master/STABILITY-BADGES.md#work-in-progress)
 [![test](https://github.com/masaakiaoyagi/spectator-context_helper.cr/actions/workflows/test.yml/badge.svg)](https://github.com/masaakiaoyagi/spectator-context_helper.cr/actions/workflows/test.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 

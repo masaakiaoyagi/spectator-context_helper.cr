@@ -23,11 +23,11 @@ That's basically all there is to it, but I think it will be more potent when use
 ## Installation
 
 . Add the dependency to your `shard.yml`:
-
++
 ```yaml
-    development_dependencies:
-      spectator-context_helper:
-        github: masaakiaoyagi/spectator-context_helper.cr
+development_dependencies:
+  spectator-context_helper:
+    github: masaakiaoyagi/spectator-context_helper.cr
 ```
 
 . Run `shards install`

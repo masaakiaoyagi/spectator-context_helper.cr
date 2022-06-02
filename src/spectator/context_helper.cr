@@ -4,25 +4,25 @@ require "./context_helper/version"
 
 module Spectator::ContextHelper
   module DSL
-    macro example_with(__description__ = nil, metadata = nil, shared = nil, **__values__, &block)
-      context_with({{ __description__ }}, {{ metadata }}, {{ shared }}, {{ **__values__ }}) do
+    macro example_with(__description__ = nil, _meta = nil, _shared = nil, **__values__, &block)
+      context_with({{ __description__ }}, {{ _meta }}, {{ _shared }}, {{ **__values__ }}) do
         it {{ block }}
       end
     end
 
-    macro context_with(__description__ = nil, metadata = nil, shared = nil, **__values__, &block)
+    macro context_with(__description__ = nil, _meta = nil, _shared = nil, **__values__, &block)
       {%
-        if metadata.class_name == "TupleLiteral"
-          *rest, last = metadata
+        if _meta.class_name == "TupleLiteral"
+          *rest, last = _meta
           if last.class_name == "NamedTupleLiteral"
             tags = rest
             metadata = last
           else
-            tags = metadata
+            tags = _meta
             metadata = {} of Symbol => String
           end
         else
-          tags = { metadata }
+          tags = { _meta }
           metadata = {} of Symbol => String
         end
       %}
